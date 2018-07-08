@@ -121,8 +121,8 @@ func NewGA(mu, lambda, genCount, entitySize int, ofs bool,
 
 ## TODO
 
-* [ ] Code documentation
-* [ ] Code Tests
+* [ ] documentation
+* [ ] tests
 * [ ] Result and execution visualisation
 * [ ] Impl. more mutation functions
 * [ ] Impl. more crossover functions
