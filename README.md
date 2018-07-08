@@ -13,7 +13,7 @@ There are two strategies implemented:
 
 What can be optimized from the current state:
 * Function minimum value search
-* Traveling Sales Man optimisation (TSP)
+* Traveling Sales Man optimization (TSP)
 
 Thanks to [Kentic-govaluate](https://github.com/Knetic/govaluate),
 there can be a function specified via an expression.
