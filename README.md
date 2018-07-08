@@ -23,7 +23,7 @@ This function will be interpreted and evaluated at runtime.
 
 ![full framework diagram](doc/framework.png)
 
-## How to use it
+## How to use the Framework
 
 ### Minimum value search
 
@@ -46,6 +46,26 @@ e.Add(funcOpti)
 // tell the engine to run the first task in the internal queue
 e.Run()
 ```
+
+__ES Parameter__
+```go
+func NewES(mu, lambda, genCount, entitySize int,
+    f iface.Fitness, g iface.Generator, m iface.Mutator,
+    s iface.Selection, mc iface.MutChanger, c iface.SolutionCheck,
+    comp iface.Comp) iface.Task {...}
+```
+
+* mu: Parent population size
+* lambda: Children population size
+* genCount: How many generations should be evaluated
+* entitySize: How many values has one solution candidate
+* f: Fitness-Function to calculate the score of each candidate
+* g: Generator for creating new candidates
+* m: Mutator which creates the mutated children
+* s: Selection with or without parents or ...
+* mc: Sigma-Controller for changes the mutation range over time
+* c: Solution-Check for checking and fixing a candidate to be valid
+* comp: Comparing operation for the score value to find for example the minimum
 
 ### Traveling Sales Man optimisation
 
@@ -77,7 +97,27 @@ e.Add(tsp)
 e.Run()
 ```
 
+__GA Parameter__
+```go
+func NewGA(mu, lambda, genCount, entitySize int, ofs bool,
+    f iface.Fitness, g iface.Generator, xo iface.Crossover,
+    m iface.Mutator, s iface.Selection, mc iface.MutChanger,
+    c iface.SolutionCheck, comp iface.Comp) iface.Task {...}
+```
 
+* mu: Parent population size
+* lambda: Children population size
+* genCount: How many generations should be evaluated
+* entitySize: How many values has one solution candidate
+* ofs: Offspring-Selection means, should a child be succeed over it's parents be directly in the new population
+* f: Fitness-Function to calculate the score of each candidate
+* g: Generator for creating new candidates
+* xo: Crossover for producing an offspring from two parents
+* m: Mutator which creates the mutated children
+* s: Selection with or without parents or ...
+* mc: Sigma-Controller for changes the mutation range over time
+* c: Solution-Check for checking and fixing a candidate to be valid
+* comp: Comparing operation for the score value to find for example the minimum
 
 ## TODO
 
